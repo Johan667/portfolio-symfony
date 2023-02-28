@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Johan Kasri | Accueil{% endblock %}
+
+{% block body %}
+    <div class="home-presentation text-center">
+        <p>
+            Je suis un <strong>développeur web</strong> passionné et <em>expérimenté</em>, spécialisé dans le développement avec <strong>Symfony</strong>.<br>
+            Je passe mon temps à perfectionner mes compétences.<br>
+            Grâce à mon expertise technique et à mon esprit créatif, je suis en mesure de <em>créer des sites web</em> innovants et <strong>performants</strong> qui répondent aux besoins de mes clients.<br>
+            Si vous cherchez un développeur web professionnel et dévoué, je suis là pour vous aider à réaliser votre projet avec <strong>succès</strong>.
+        </p>
+    </div>
+
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Aperçu de mes projets</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="project1.jpg" alt="Devnodes">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 1</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sed orci vel malesuada. Nulla facilisi.</p>
+                            <a href="#" class="btn btn-primary">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="project2.jpg" alt="Projet 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 2</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sed orci vel malesuada. Nulla facilisi.</p>
+                            <a href="#" class="btn btn-primary">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="project3.jpg" alt="Projet 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 3</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sed orci vel malesuada. Nulla facilisi.</p>
+                            <a href="#" class="btn btn-primary">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Mes compétences clés</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Symfony</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>PHP</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>JavaScript</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>HTML/CSS</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Mon expérience professionnelle</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="experience-item">
+                        <h4>Nom de l'entreprise</h4>
+                        <h5>Titre de poste</h5>
+                        <p>Date de début - Date de fin</p>
+                        <p>Description des tâches et réalisations</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="experience-item">
+                        <h4>Nom de l'entreprise</h4>
+                        <h5>Titre de poste</h5>
+                        <p>Date de début - Date de fin</p>
+                        <p>Description des tâches et réalisations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-section">
+                <h2 class="text-center mt-5 mb-5">Ce que disent mes clients</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="testimonial-item">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lorem vel libero semper dignissim quis vel est."</p>
+                            <p class="testimonial-author">- Nom de l'auteur, Fonction</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="testimonial-item">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lorem vel libero semper dignissim quis vel est."</p>
+                            <p class="testimonial-author">- Nom de l'auteur, Fonction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section">
+                <h2 class="text-center mt-5 mb-5">Me contacter</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control" id="name" placeholder="Entrez votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Entrez votre adresse e-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
