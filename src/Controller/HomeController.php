@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Project;
+use App\Entity\Skills;
 use App\Form\ContactType;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -30,6 +31,10 @@ class HomeController extends AbstractController
 
         $projects = $this->entityManager->getRepository(Project::class)->findBy([], ['createdAt' => 'DESC'], 3);
 
+        /** Parti Skills */
+
+        $skills = $this->entityManager->getRepository(Skills::class)->findAll();
+
         /** Parti formulaire de contact */
 
         $contact = $this->createForm(ContactType::class);
@@ -45,7 +50,8 @@ class HomeController extends AbstractController
             $this->addFlash('message', 'Votre demande à bien été prise en compte ! ');
         }
         return $this->render('home/index.html.twig', [
-
+        'projects'=>$projects,
+        'skills'=>$skills,
         'contact'=>$contact->createView(),
         ]);
     }

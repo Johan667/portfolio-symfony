@@ -16,36 +16,18 @@
         <div class="container">
             <h2 class="text-center mb-5">Aperçu de mes projets</h2>
             <div class="row">
+                {% for project in projects %}
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img class="card-img-top" src="project1.jpg" alt="Devnodes">
+                        <img class="card-img-top" src="{{ asset('img/' ~ project.picture) }}" alt="{{ project.title }}">
                         <div class="card-body">
-                            <h5 class="card-title">Projet 1</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sed orci vel malesuada. Nulla facilisi.</p>
-                            <a href="#" class="btn btn-primary">Voir le projet</a>
+                            <h5 class="card-title text-center">{{ project.title }}</h5>
+                            <p class="card-text text-center">{{ project.description }}</p>
+                            <a href="{{ project.link }}" class="btn btn-dark">Voir le projet</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img class="card-img-top" src="project2.jpg" alt="Projet 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Projet 2</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sed orci vel malesuada. Nulla facilisi.</p>
-                            <a href="#" class="btn btn-primary">Voir le projet</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img class="card-img-top" src="project3.jpg" alt="Projet 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Projet 3</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sed orci vel malesuada. Nulla facilisi.</p>
-                            <a href="#" class="btn btn-primary">Voir le projet</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -54,18 +36,11 @@
         <div class="container">
             <h2 class="text-center mb-5">Mes compétences clés</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <h5>Symfony</h5>
+                {% for skill in skills %}
+                <div class="col">
+                    <h5>{{ skill.name }}</h5>
                 </div>
-                <div class="col-md-6">
-                    <h5>PHP</h5>
-                </div>
-                <div class="col-md-6">
-                    <h5>JavaScript</h5>
-                </div>
-                <div class="col-md-6">
-                    <h5>HTML/CSS</h5>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -73,14 +48,6 @@
         <div class="container">
             <h2 class="text-center mb-5">Mon expérience professionnelle</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="experience-item">
-                        <h4>Nom de l'entreprise</h4>
-                        <h5>Titre de poste</h5>
-                        <p>Date de début - Date de fin</p>
-                        <p>Description des tâches et réalisations</p>
-                    </div>
-                </div>
                 <div class="col-md-6">
                     <div class="experience-item">
                         <h4>Nom de l'entreprise</h4>
@@ -99,12 +66,7 @@
                             <p class="testimonial-author">- Nom de l'auteur, Fonction</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial-item">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lorem vel libero semper dignissim quis vel est."</p>
-                            <p class="testimonial-author">- Nom de l'auteur, Fonction</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="contact-section">

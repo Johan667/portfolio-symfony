@@ -49,8 +49,9 @@
 }
 
 .skills-section {
-    background-color: #f8f9fa;
+    background-color: #212529;
     padding: 80px 0;
+    color:violet;
 }
 
 .skills-section h2 {
@@ -111,6 +112,8 @@
 
 .testimonials-section {
     padding: 80px 0;
+    background-color: #212529;
+    color:violet;
 }
 
 .testimonials-section h2 {
@@ -122,29 +125,43 @@
 .testimonial-item {
     padding: 20px;
     margin-bottom: 30px;
-    background-color: white;
+    background-color: #212529;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
 .testimonial-item p {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #444444;
+    color:violet;
 }
 
 .testimonial-author {
     font-size: 14px;
-    color: #777777;
+    color:violet;
 }
 
 .contact-section {
+    margin-top: 1rem;
     padding: 80px 0;
+    border-radius: 9px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2);
+
+
 }
 
 .contact-section h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 50px;
+}
+
+.contact-section div.mb-3{
+    margin:auto;
+    max-width: 800px;
+}
+
+.contact-section .form-control{
+    box-shadow: 0 8px 8px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .form-group label {
