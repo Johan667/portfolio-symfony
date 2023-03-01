@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Project;
 use App\Form\ContactType;
+use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,6 +26,10 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(MailerInterface $mailer,Request $request): Response
     {
+        /** Parti apercu de mes projets */
+
+        $projects = $this->entityManager->getRepository(Project::class)->findBy([], ['createdAt' => 'DESC'], 3);
+
         /** Parti formulaire de contact */
 
         $contact = $this->createForm(ContactType::class);

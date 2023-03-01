@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Johan Kasri | Mon compte{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mt-3 mb-3">Mon compte</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-3">Modifier mes informations</h2>
+                    {{ form_start(editProfileForm) }}
+                    {{ form_widget(editProfileForm.name) }}
+                    {{ form_widget(editProfileForm.firstname) }}
+                    {{ form_widget(editProfileForm.email) }}
+                    {{ form_widget(editProfileForm.submit) }}
+                    {{ form_errors(editProfileForm) }}
+                    {{ form_end(editProfileForm) }}
+
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-3">Supprimer mon compte</h2>
+
+                <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?')" href="{{ path('delete_account') }}">
+                    <i class="fa-solid fa-trash"></i>
+                    Supprimer mon compte</a>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
