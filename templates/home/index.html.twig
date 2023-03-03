@@ -3,34 +3,43 @@
 {% block title %}Johan Kasri | Accueil{% endblock %}
 
 {% block body %}
-    <div class="home-presentation text-center">
-        <p>
-            Je suis un <strong>développeur web</strong> passionné et <em>expérimenté</em>, spécialisé dans le développement avec <strong>Symfony</strong>.<br>
-            Je passe mon temps à perfectionner mes compétences.<br>
-            Grâce à mon expertise technique et à mon esprit créatif, je suis en mesure de <em>créer des sites web</em> innovants et <strong>performants</strong> qui répondent aux besoins de mes clients.<br>
-            Si vous cherchez un développeur web professionnel et dévoué, je suis là pour vous aider à réaliser votre projet avec <strong>succès</strong>.
-        </p>
+    <div class="home-presentation">
+        <div class="container-header">
+            <h1 class="title-header">Johan Kasri</h1>
+            <p>
+                Je suis un <strong>développeur web</strong> passionné et <em>expérimenté</em>, spécialisé dans le développement avec <strong>Symfony</strong>.<br>
+                Je passe mon temps à perfectionner mes compétences.<br>
+                Si vous cherchez un développeur web professionnel et dévoué, je suis là pour vous aider à réaliser votre projet avec <strong>succès</strong>.
+            </p>
+            <div class="text-center mt-5">
+                <a href="#projects-section" class="btn btn-lg btn-outline-dark">
+                    <span class="text">Voir plus</span>
+                </a>
+            </div>
+        </div>
     </div>
-
-    <section class="projects-section">
+    <section id="projects-section" class="projects-section">
         <div class="container">
-            <h2 class="text-center mb-5">Aperçu de mes projets</h2>
+            <h2 class="text-center mt-3 mb-5">Aperçu de mes projets</h2>
             <div class="row">
                 {% for project in projects %}
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('img/' ~ project.picture) }}" alt="{{ project.title }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ project.title }}</h5>
-                            <p class="card-text text-center">{{ project.description }}</p>
-                            <a href="{{ project.link }}" class="btn btn-dark">Voir le projet</a>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="{{ asset('img/' ~ project.picture) }}" alt="{{ project.title }}">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h5 class="card-title text-center">{{ project.title }}</h5>
+                                <p class="card-text text-center">{{ project.description }}</p>
+                                <div class="mt-auto text-center">
+                                    <a href="{{ project.link }}" class="btn btn-dark">Voir le projet</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
     </section>
+
 
     <section class="skills-section">
         <div class="container">

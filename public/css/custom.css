@@ -1,95 +1,148 @@
-/** HOME **/
+/* Body */
+body {
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
 
+.navbar{
+    width: 100%;
+}
+/* Home presentation */
 .home-presentation {
-    background-image: url('/img/space.jpg');
-    background-size: cover;
-    background-position: center center;
-    color: white;
-    text-align: center;
-    padding: 50px;
-    opacity: 1.01;
+    width: 100%;
+    height: 98vh;
+    background-color: #212529;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#212529, #313940);
+}
+
+.home-presentation .btn-lg {
+    float:right;
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    color: #fff;
+    text-shadow: 2px 2px 0 #3f51b5;
+}
+
+/** FIN HEADER **/
+
+
+.skills-section {
+    padding-top: 100px;
+
+}
+
+.title-header {
+    top:25px;
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    color: #fff;
+    text-shadow: 2px 2px 0 #3f51b5;
 }
 
 .home-presentation p {
-
     font-size: 24px;
+    color: #fff;
+    position: relative;
 }
 
-.projects-section {
-    background-color: #f8f9fa;
-    padding: 80px 0;
+.home-presentation p strong,
+.home-presentation p em {
+    position: relative;
+    z-index: 1;
 }
 
+.home-presentation p strong::before,
+.home-presentation p em::before,
+.home-presentation p span::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.home-presentation p strong:hover::before,
+.home-presentation p em:hover::before,
+.home-presentation p span:hover::before {
+    width: 100%;
+    background-color: #3f51b5;
+}
+
+/* Projects section */
+.projects-section{
+    padding:2%;
+}
 .projects-section h2 {
-    font-size: 32px;
-    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.projects-section .card {
-    border: none;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.projects-section .card-img-top {
-    height: 200px;
-    object-fit: cover;
+.card:hover {
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
-.projects-section .card-title {
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
     font-size: 24px;
     font-weight: bold;
-}
-
-.projects-section .card-text {
-    font-size: 16px;
-}
-
-.projects-section .btn {
-    margin-top: 20px;
-}
-
-.skills-section {
-    background-color: #212529;
-    padding: 80px 0;
-    color:violet;
-}
-
-.skills-section h2 {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.skills-section h5 {
     margin-bottom: 10px;
 }
 
-.skills-section .progress {
-    height: 20px;
+.card-text {
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
-.skills-section .progress-bar {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
+.btn-dark {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
 }
 
-.experience-section {
-    background-color: #f7f7f7;
-    padding: 80px 0;
+.btn-dark:hover {
+    background-color: #23272b;
+    border-color: #23272b;
+    color: #fff;
 }
 
-.experience-section h2 {
-    font-size: 32px;
-    font-weight: bold;
+/* Skills section */
+.skills-section h2 {
     margin-bottom: 50px;
 }
 
-.experience-item {
-    padding: 20px;
-    margin-bottom: 30px;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+.col {
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 0;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Experience section */
+.experience-section h2 {
+    margin-bottom: 50px;
 }
 
 .experience-item h4 {
@@ -99,107 +152,59 @@
 }
 
 .experience-item h5 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #444444;
+    margin-top: 20px;
 }
 
 .experience-item p {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.testimonials-section {
-    padding: 80px 0;
-    background-color: #212529;
-    color:violet;
-}
-
+/* Testimonials section */
 .testimonials-section h2 {
-    font-size: 32px;
-    font-weight: bold;
     margin-bottom: 50px;
 }
 
 .testimonial-item {
     padding: 20px;
-    margin-bottom: 30px;
-    background-color: #212529;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .testimonial-item p {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color:violet;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .testimonial-author {
-    font-size: 14px;
-    color:violet;
+    font-size: 16px;
+    font-style: italic;
 }
 
-.contact-section {
-    margin-top: 1rem;
-    padding: 80px 0;
-    border-radius: 9px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2);
-
-
-}
-
+/* Contact section */
 .contact-section h2 {
-    font-size: 32px;
-    font-weight: bold;
     margin-bottom: 50px;
 }
 
-.contact-section div.mb-3{
-    margin:auto;
-    max-width: 800px;
-}
-
-.contact-section .form-control{
-    box-shadow: 0 8px 8px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.form-group label {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
-}
-
 .form-control {
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #fff;
     border: none;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-.form-control:focus {
-    outline: none;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-}
-
-textarea.form-control {
-    height: 150px;
+    border-radius: 0;
+    box-shadow: none;
+    color: #212529;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .btn-primary {
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 30px;
-    border: none;
-    background-color: #28a745;
-    color: white;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
 }
 
-.btn-primary:hover {
-    background-color: #218838;
-}
+/** ANIMATION **/
 
