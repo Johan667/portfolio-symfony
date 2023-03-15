@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ProfessionalExperience;
 use App\Entity\Project;
 use App\Entity\Skills;
 use App\Form\ContactType;
@@ -35,6 +36,10 @@ class HomeController extends AbstractController
 
         $skills = $this->entityManager->getRepository(Skills::class)->findAll();
 
+        /** Parti apercu de mes projets */
+
+        $pro = $this->entityManager->getRepository(ProfessionalExperience::class)->findBy([], ['startDate' => 'DESC'], 3);
+
         /** Parti formulaire de contact */
 
         $contact = $this->createForm(ContactType::class);
@@ -52,6 +57,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
         'projects'=>$projects,
         'skills'=>$skills,
+        'pro'=>$pro,
         'contact'=>$contact->createView(),
         ]);
     }

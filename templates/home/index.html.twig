@@ -7,9 +7,11 @@
         <div class="container-header">
             <h1 class="title-header">Johan Kasri</h1>
             <p>
-                Je suis un <strong>développeur web</strong> passionné et <em>expérimenté</em>, spécialisé dans le développement avec <strong>Symfony</strong>.<br>
+                Je suis un <strong>développeur web</strong> passionné et <em>expérimenté</em>, spécialisé dans le
+                développement avec <strong>Symfony</strong>.<br>
                 Je passe mon temps à perfectionner mes compétences.<br>
-                Si vous cherchez un développeur web professionnel et dévoué, je suis là pour vous aider à réaliser votre projet avec <strong>succès</strong>.
+                Si vous cherchez un développeur web professionnel et dévoué, je suis là pour vous aider à réaliser votre
+                projet avec <strong>succès</strong>.
             </p>
             <div class="text-center mt-5">
                 <a href="#projects-section" class="btn btn-lg btn-outline-dark">
@@ -25,45 +27,54 @@
                 {% for project in projects %}
                     <div class="col-md-4 mb-4">
                         <div class="card h-100">
-                            <img class="card-img-top" src="{{ asset('img/' ~ project.picture) }}" alt="{{ project.title }}">
+                            <img class="card-img-top" src="{{ asset('img/' ~ project.picture) }}"
+                                 alt="{{ project.title }}">
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <h5 class="card-title text-center">{{ project.title }}</h5>
                                 <p class="card-text text-center">{{ project.description }}</p>
                                 <div class="mt-auto text-center">
-                                    <a href="{{ project.link }}" class="btn btn-dark">Voir le projet</a>
+                                    <a href="{{ project.link }}" class="btn btn-dark" target="_blank">Voir le projet</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
+                <p class="text-center"><a href="https://github.com/Johan667" target="_blank"
+                                          style="text-decoration: none; color:black;">VOIR PLUS <i
+                                class="fa-brands fa-github"></i></a></p>
             </div>
         </div>
     </section>
-
-
     <section class="skills-section">
         <div class="container">
-            <h2 class="text-center mb-5">Mes compétences clés</h2>
+            <h2 class="text-center mb-6">Mes compétences clés</h2>
             <div class="row">
                 {% for skill in skills %}
-                <div class="col">
-                    <h5>{{ skill.name }}</h5>
-                </div>
+                    <div class="col">
+                        <h5>{{ skill.name }}</h5>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </section>
     <section class="experience-section">
         <div class="container">
-            <h2 class="text-center mb-5">Mon expérience professionnelle</h2>
+            <h2 class="text-center mt-5">Mes expériences professionnelles récentes</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="experience-item">
-                        <h4>Nom de l'entreprise</h4>
-                        <h5>Titre de poste</h5>
-                        <p>Date de début - Date de fin</p>
-                        <p>Description des tâches et réalisations</p>
-                    </div>
+                <div class="row">
+                    {% for p in pro %}
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ p.companyName }}</h4>
+                                    <h5 class="card-subtitle mb-2">{{ p.jobTitle }}</h5>
+                                    <p class="card-text">{{ p.startDate | date('d-m-Y') }}
+                                        - {{ p.endDate | date('d-m-Y') }}</p>
+                                    <p class="card-text">{{ p.descriptionTasks }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="testimonials-section">
@@ -71,13 +82,26 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="testimonial-item">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at lorem vel libero semper dignissim quis vel est."</p>
-                            <p class="testimonial-author">- Nom de l'auteur, Fonction</p>
+                            <p>"Johan est un développeur web incroyablement talentueux. Il a réussi à transformer une
+                                simple idée en une application web fantastique en un temps record. Son attention aux
+                                détails et sa capacité à résoudre les problèmes ont permis de créer une plateforme
+                                intuitive et agréable à utiliser pour nos utilisateurs."</p>
+                            <p class="testimonial-author">- Sophie Dupont, CEO</p>
                         </div>
                     </div>
-
+                    <div class="col-md-6">
+                        <div class="testimonial-item">
+                            <p>"Nous avons travaillé avec Johan sur plusieurs projets et avons été impressionnés par son
+                                travail à chaque fois. Sa capacité à comprendre nos besoins et à les traduire en code
+                                est exceptionnelle. Il est professionnel, ponctuel et toujours prêt à apporter des
+                                solutions créatives."</p>
+                            <p class="testimonial-author">- Marie Leroy, Responsable marketing</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
             <div class="contact-section">
                 <h2 class="text-center mt-5 mb-5">Me contacter</h2>
                 {{ form_start(contact) }}
@@ -85,6 +109,4 @@
             </div>
         </div>
     </section>
-
-
 {% endblock %}
